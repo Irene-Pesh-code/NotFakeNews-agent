@@ -1,12 +1,58 @@
-.env
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
 .venv/
 venv/
-__pycache__/
-*.pyc
+env/
+
+# Environment variables (СЕКРЕТЫ!)
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Logs and runtime data
 logs/
 output/
 state.json
 *.log
-.idea/
-.vscode/
+
+# Caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pytype/
+cython_debug/
+
+# Abstra
+.abstra/
+
+# Temporary
+tempCodeRunnerFile.py
+
+# PyPI
+.pypirc
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/
+
+# Streamlit
+.streamlit/secrets.toml
