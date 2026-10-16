@@ -571,7 +571,7 @@ class _Run:
     def _save_graph(self, result: AgentResult) -> None:
         def node_json(n: Node) -> dict:
             return {
-                "id": n.id, "url": n.url, "title": n.title,
+                "id": n.id, "url": n.url, "title": n.title, "text": n.text,
                 "published_at": n.published_at.isoformat() if n.published_at else None,
                 "date_has_time": n.date_has_time, "date_source": n.date_source,
                 "depth": n.depth, "found_via": n.found_via, "verified": n.verified,
