@@ -1,0 +1,16 @@
+services:
+  bot:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+
+    image: gerantonstorm/not_fake_news-agent:latest
+
+    container_name: not_fake_news-agent
+    env_file: .env
+    restart: unless-stopped
+
+    volumes:
+      - ./data:/app/data
+
+

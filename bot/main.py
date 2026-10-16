@@ -1,9 +1,11 @@
 import asyncio
 import logging
+import os
 
 import httpx
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
+from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.enums import ParseMode
 
 from core.config import load_settings
@@ -18,7 +20,9 @@ async def main() -> None:
                         format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)
     settings = load_settings()
-    bot = Bot(settings.bot_token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    session = AiohttpSession(proxy=os.getenv("TELEGRAM_PROXY") or None)
+    bot = Bot(settings.bot_token, session=session,
+              default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
     async with httpx.AsyncClient(timeout=settings.http_timeout,
                                  headers={"User-Agent": USER_AGENT}) as http:

@@ -15,8 +15,6 @@ env/
 
 # Environment variables (СЕКРЕТЫ!)
 .env
-.env.*
-!.env.example
 
 # IDE
 .idea/
