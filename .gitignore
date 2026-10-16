@@ -54,3 +54,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# docs
+out/
+images/
+*.png
